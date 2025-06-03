@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Access Yett google drive links</title>
+  <title>Access Yett Google Drive Links</title>
   <meta charset="UTF-8">
   <style>
-    body {
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-      padding: 50px;
       background-color: #f2f2f2;
-      text-align: center;
     }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
     a {
-      display: block;
-      margin: 20px 0;
-      padding: 10px 20px;
+      display: inline-block;
+      margin: 15px 0;
+      padding: 18px 30px;
+      font-size: 1.2rem;
       background-color: #4285f4;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      width: 90%;
+      max-width: 300px;
     }
+
     a:hover {
       background-color: #3367d6;
+    }
+
+    @media (min-width: 600px) {
+      a {
+        font-size: 1.4rem;
+        padding: 20px 40px;
+        max-width: 350px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Access Yett Google Drive file links</h1>
+  <div class="container">
+    <h1>Access Yett Google Drive File Links</h1>
 
-  <a href="https://drive.google.com/file/d/1F9Z2hC30R1L18eYdQfqH245igJQxyfGI/view?usp=sharing">Yett Pitch Deck</a>
-  <a href="https://drive.google.com/file/d/1uYO8mvFCeJh39YFQkfyZhcyHmWEXSGYO/view?usp=sharing">Investment proposal</a>
-  <a href="https://drive.google.com/file/d/1YPQnY2YeDn8wZydisUt0hXBbwgRRKBb5/view?usp=sharing">Yett:OS for AI era</a>
+    <a href="https://drive.google.com/file/d/1F9Z2hC30R1L18eYdQfqH245igJQxyfGI/view?usp=sharing">Yett Pitch Deck</a>
+    <a href="https://drive.google.com/file/d/1uYO8mvFCeJh39YFQkfyZhcyHmWEXSGYO/view?usp=sharing">Investment Proposal</a>
+    <a href="https://drive.google.com/file/d/1YPQnY2YeDn8wZydisUt0hXBbwgRRKBb5/view?usp=sharing">Yett: OS for AI Era</a>
+  </div>
 
 </body>
 </html>
