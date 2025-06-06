@@ -10,24 +10,34 @@
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #4285f4;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8rem;
     }
 
     .center-screen {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       text-align: center;
       padding: 20px;
     }
 
     h1 {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       font-size: 2rem;
     }
 
-    a {
+    a.button-link {
       display: block;
       margin: 20px 0;
       padding: 20px 40px;
@@ -41,32 +51,70 @@
       max-width: 400px;
     }
 
-    a:hover {
+    a.button-link:hover {
       background-color: #3367d6;
     }
 
+    footer {
+      background-color: #ddd;
+      padding: 20px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-size: 1.5rem;
+    }
+
+    .social-icons a:hover {
+      color: #4285f4;
+    }
+
     @media (max-width: 600px) {
-      a {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      a.button-link {
         font-size: 1.3rem;
         padding: 18px 30px;
         max-width: 90%;
       }
-
-      h1 {
-        font-size: 1.5rem;
-      }
     }
   </style>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+  <header>
+    Yett Access Portal
+  </header>
 
   <div class="center-screen">
     <h1>Access Yett Google Drive File Links</h1>
 
-    <a href="https://drive.google.com/file/d/1F9Z2hC30R1L18eYdQfqH245igJQxyfGI/view?usp=sharing">Yett Pitch Deck</a>
-    <a href="https://drive.google.com/file/d/1uYO8mvFCeJh39YFQkfyZhcyHmWEXSGYO/view?usp=sharing">Investment Proposal</a>
-    <a href="https://drive.google.com/file/d/1YPQnY2YeDn8wZydisUt0hXBbwgRRKBb5/view?usp=sharing">Yett: OS for AI Era</a>
+    <a class="button-link" href="https://drive.google.com/file/d/1F9Z2hC30R1L18eYdQfqH245igJQxyfGI/view?usp=sharing">Yett Pitch Deck</a>
+    <a class="button-link" href="https://drive.google.com/file/d/1uYO8mvFCeJh39YFQkfyZhcyHmWEXSGYO/view?usp=sharing">Investment Proposal</a>
+    <a class="button-link" href="https://drive.google.com/file/d/1YPQnY2YeDn8wZydisUt0hXBbwgRRKBb5/view?usp=sharing">Yett: OS for AI Era</a>
   </div>
+
+  <footer>
+    © 2025 Webwabi Private Limited  
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
 
 </body>
 </html>
