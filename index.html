@@ -5,7 +5,7 @@
   <title>Access Yett Google Drive Links</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font Awesome CDN for social icons -->
+  <!-- Font Awesome for social media icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -23,8 +23,21 @@
       background-color: #4285f4;
       color: white;
       padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
       text-align: center;
+    }
+
+    header img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    header .title {
       font-size: 1.8rem;
+      font-weight: bold;
     }
 
     .center-screen {
@@ -65,6 +78,11 @@
       padding: 20px;
       text-align: center;
       font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .footer-contact {
+      margin-top: 10px;
     }
 
     .social-icons {
@@ -92,15 +110,27 @@
         padding: 18px 30px;
         max-width: 90%;
       }
+
+      header img {
+        height: 30px;
+        margin-bottom: 10px;
+      }
+
+      header .title {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header with logo -->
   <header>
-    Yett Access Portal
+    <img src="https://www.yett.in/logo.png" alt="Yett Logo" />
+    <div class="title">Yett Access Portal</div>
   </header>
 
+  <!-- Main content -->
   <div class="center-screen">
     <h1>Access Yett Google Drive File Links</h1>
 
@@ -109,8 +139,14 @@
     <a class="button-link" href="https://drive.google.com/file/d/1YPQnY2YeDn8wZydisUt0hXBbwgRRKBb5/view?usp=sharing" target="_blank">Yett: OS for AI Era</a>
   </div>
 
+  <!-- Footer -->
   <footer>
     © 2025 Webwabi Private Limited  
+    <div class="footer-contact">
+      <div>🌐 <a href="https://www.yett.in" target="_blank">www.yett.in</a></div>
+      <div>📧 <a href="mailto:info@yett.in">info@yett.in</a></div>
+      <div>📞 <a href="tel:9839402111">+91 9839402111</a></div>
+    </div>
     <div class="social-icons">
       <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
       <a href="https://youtube.com/yourchannel" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
@@ -120,3 +156,4 @@
 
 </body>
 </html>
+
