@@ -5,56 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>What’s Changed in the Past Three Months — Yett</title>
   <meta name="description" content="Yett three-month progress update covering users, merchants, partnerships, product milestones, and culture." />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Borel&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f1221;
-      --card: #13162b;
-      --text: #eef2ff;
-      --muted: #b7c0ff;
-      --accent: #8aa3ff;
-      --maxw: 860px;
+      --primary: #5b7cfd;
+      --secondary: #1a9461;
+      --accent: #ee5a36;
+      --text: #232522;
+      --bg: #fdf4eb;
+      --muted: #bfbfbf;
+      --maxw: 880px;
     }
-    html, body { height: 100%; }
+    html, body { height: 100%; margin: 0; }
     body {
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 20% -10%, #1b1f3a 0%, var(--bg) 45%), var(--bg);
+      font-family: 'Archivo', sans-serif;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      position: relative;
     }
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 72px 20px; }
-    header h1 { font-size: clamp(1.8rem, 2.5vw + 1rem, 2.6rem); margin: 0 0 10px; letter-spacing: 0.2px; }
-    header p.lede { color: var(--muted); margin: 0 0 28px; font-size: 1.05rem; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 80px 20px 60px; }
+    header h1 { font-family: 'Borel', cursive; font-size: clamp(1.8rem, 2.5vw + 1rem, 2.6rem); margin: 0 0 10px; color: var(--primary); }
+    header p.lede { color: var(--secondary); margin: 0 0 28px; font-size: 1.05rem; }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.08);
+      background: #fff;
       border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      padding: 32px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+      border: 1px solid #eee;
     }
 
-    h2 { font-size: 1.1rem; letter-spacing: 0.3px; color: var(--accent); margin: 22px 0 10px; }
+    h2 { font-family: 'Archivo', sans-serif; font-size: 1.1rem; color: var(--primary); margin: 22px 0 10px; }
     p { margin: 0 0 8px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
 
     .section { margin: 18px 0; padding-top: 2px; }
-    .resources { margin-top: 36px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; }
+    .resources { margin-top: 36px; border-top: 1px solid var(--muted); padding-top: 24px; }
     .resources ul { list-style: none; padding-left: 0; }
     .resources li { margin: 8px 0; }
-    .resources a { color: var(--accent); text-decoration: none; }
+    .resources a { color: var(--secondary); text-decoration: none; }
     .resources a:hover { text-decoration: underline; }
 
-    .footer { margin-top: 26px; color: var(--muted); text-align: center; font-size: 0.9rem; }
-    .footer a { color: var(--accent); text-decoration: none; margin: 0 8px; }
-    .footer a:hover { text-decoration: underline; }
-
-    @media print {
-      body { background: #fff; color: #000; }
-      .card { border: none; box-shadow: none; }
-      header p.lede, .footer { color: #333; }
+    .targets ul { list-style: none; padding: 0; }
+    .targets li {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      font-family: 'Archivo', sans-serif;
     }
+    .targets li span.icon {
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .footer { margin-top: 26px; color: var(--muted); text-align: center; font-size: 0.9rem; }
+    .footer a { color: var(--primary); text-decoration: none; margin: 0 8px; }
+    .footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -120,17 +133,17 @@
         <p>We are building this with commitment and dedication, and we will try not to let you down in effort, intent, or conduct.</p>
       </div>
 
-      <div class="section">
+      <div class="section targets">
         <h2>Targets for the Next 12 Months</h2>
         <ul>
-          <li>Presence in 11–16 cities</li>
-          <li>App active users &gt; 2,00,000</li>
-          <li>Enable 15,000+ transactions through the app</li>
-          <li>Stores onboarded – 9.6k+</li>
-          <li>Yett 3.0 launched</li>
-          <li>Instagram 50k+ community</li>
-          <li>YouTube 20k+ community</li>
-          <li>WhatsApp 5k+ community</li>
+          <li><span class="icon">📍</span>Presence in 11–16 cities</li>
+          <li><span class="icon">📱</span>App active users &gt; 2,00,000</li>
+          <li><span class="icon">💳</span>Enable 15,000+ transactions through the app</li>
+          <li><span class="icon">🏬</span>Stores onboarded – 9.6k+</li>
+          <li><span class="icon">🚀</span>Yett 3.0 launched</li>
+          <li><span class="icon">📸</span>Instagram 50k+ community</li>
+          <li><span class="icon">🎥</span>YouTube 20k+ community</li>
+          <li><span class="icon">💬</span>WhatsApp 5k+ community</li>
         </ul>
       </div>
 
