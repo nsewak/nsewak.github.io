@@ -1,614 +1,138 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yett Resources | Webwabi Private Limited</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What’s Changed in the Past Three Months — Yett</title>
+  <meta name="description" content="Yett three‑month progress update covering users, merchants, partnerships, product milestones, and culture." />
   <style>
     :root {
-      --primary: #5b7cfd;
-      --primary-dark: #1d4ed8;
-      --secondary: #10b981;
-      --dark: #1e293b;
-      --light: #f8fafc;
-      --gray: #64748b;
-      --light-gray: #e2e8f0;
-      --accent: #8b5cf6;
+      --bg: #0f1221;
+      --card: #13162b;
+      --text: #eef2ff;
+      --muted: #b7c0ff;
+      --accent: #8aa3ff;
+      --maxw: 860px;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fdf4eb;
-      color: var(--dark);
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 20% -10%, #1b1f3a 0%, var(--bg) 45%), var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 72px 20px; }
+    header h1 { font-size: clamp(1.8rem, 2.5vw + 1rem, 2.6rem); margin: 0 0 10px; letter-spacing: 0.2px; }
+    header p.lede { color: var(--muted); margin: 0 0 28px; font-size: 1.05rem; }
 
-    /* Header */
-    header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white; padding: 25px 0; position: relative; overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
-    header::before {
-      content: ''; position: absolute; top: -50%; right: -10%;
-      width: 600px; height: 600px; border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-    }
-    .header-content { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
-    .logo { display: flex; align-items: center; gap: 15px; }
-    .logo-icon { font-size: 2.5rem; color: var(--secondary); }
-    .logo-text { font-size: 1.8rem; font-weight: 700; }
-    .logo-text span { color: var(--secondary); }
 
-    /* Hero */
-    .hero { padding: 60px 0; text-align: center; }
-    .hero h1 {
-      font-size: 2.8rem; margin-bottom: 20px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      position: relative; display: inline-block;
-    }
-    .hero h1::after {
-      content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
-      width: 80px; height: 4px; background: var(--secondary); border-radius: 2px;
-    }
-    .hero p { font-size: 1.2rem; color: var(--gray); max-width: 700px; margin: 0 auto 40px; }
+    h2 { font-size: 1.1rem; letter-spacing: 0.3px; color: var(--accent); margin: 22px 0 10px; }
+    p { margin: 0 0 8px; }
 
-    /* Cards */
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px; margin: 40px 0;
-    }
-    .resource-card {
-      background: white; border-radius: 16px; overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease; position: relative; transform: translateY(0);
-      will-change: transform, opacity;
-    }
-    .resource-card:hover { transform: translateY(-10px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); }
-    .card-icon {
-      height: 150px; display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      color: white; font-size: 3.5rem;
-    }
-    .card-content { padding: 25px; }
-    .card-content h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--dark); }
-    .card-content p { color: var(--gray); margin-bottom: 20px; font-size: 1rem; }
-    .card-button {
-      display: inline-block; padding: 12px 25px; background: var(--primary); color: white;
-      border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;
-      border: none; cursor: pointer; width: 100%; text-align: center;
-    }
-    .card-button:hover { background: var(--primary-dark); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
-    .card-button i { margin-left: 8px; transition: transform 0.3s ease; }
-    .card-button:hover i { transform: translateX(5px); }
+    .section { margin: 18px 0; padding-top: 2px; }
+    .resources { margin-top: 36px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; }
+    .resources ul { list-style: none; padding-left: 0; }
+    .resources li { margin: 8px 0; }
+    .resources a { color: var(--accent); text-decoration: none; }
+    .resources a:hover { text-decoration: underline; }
 
-    /* Footer */
-    footer { background-color: #232522; color: white; padding: 60px 0 30px; position: relative; margin-top: 80px; }
-    .footer-content {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px; margin-bottom: 40px;
+    .footer { margin-top: 26px; color: var(--muted); }
+
+    @media print {
+      body { background: #fff; color: #000; }
+      .card { border: none; box-shadow: none; }
+      header p.lede, .footer { color: #333; }
     }
-    .footer-logo { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; color: var(--secondary); }
-    .footer-about p { color: #cbd5e1; margin-bottom: 20px; font-size: 1rem; }
-    .footer-section h4 { font-size: 1.3rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
-    .footer-section h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--secondary); }
-    .footer-links { list-style: none; }
-    .footer-links li { margin-bottom: 12px; }
-    .footer-links a { color: #cbd5e1; text-decoration: none; transition: all 0.3s ease; display: block; }
-    .footer-links a:hover { color: white; transform: translateX(5px); }
-    .contact-info { display: flex; flex-direction: column; gap: 15px; }
-    .contact-item { display: flex; align-items: flex-start; gap: 12px; }
-    .contact-icon { color: var(--secondary); font-size: 1.2rem; min-width: 25px; }
-    .social-links { display: flex; gap: 15px; margin-top: 20px; }
-    .social-link {
-      display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1); color: white; font-size: 1.2rem; transition: all 0.3s ease;
-    }
-    .social-link:hover { background: var(--primary); transform: translateY(-3px); }
-    .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #94a3b8; font-size: 0.9rem; }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container header-content">
-      <div class="logo">
-        <div class="logo-icon"><i class="fas fa-store"></i></div>
-        <div class="logo-text">Yett <span>Resources</span></div>
-      </div>
-    </div>
-  </header>
+  <main class="wrap">
+    <header>
+      <h1>What’s Changed in the Past Three Months</h1>
+      <p class="lede">Yett has made meaningful progress across product, partnerships, and team fronts.</p>
+    </header>
 
-  <!-- Main Content -->
-  <div class="container">
-    <section class="hero">
-      <h1>Access Yett Resources</h1>
-      <p>Explore our resources designed to showcase the vision, strategy, and potential of Yett, India's first dedicated in-store shopping discovery platform for Tier-2 cities.</p>
-    </section>
-
-    <div class="resources-grid">
-      <!-- Investor Resources Heading -->
-      <div style="grid-column: 1/-1; text-align: center; margin: 40px 0 10px;">
-        <h2 style="font-size: 2rem; color: var(--primary); border-bottom: 3px solid var(--secondary); display: inline-block; padding-bottom: 8px;">
-          Investor Resources
-        </h2>
+    <article class="card" aria-labelledby="update-title">
+      <div class="section">
+        <h2 id="update-title">User Growth</h2>
+        <p>We’ve crossed 25,000 downloads with 14,000 active users, with engagement time greater than 3 minutes 30 seconds.</p>
       </div>
 
-      <!-- Yett Pitch Deck -->
-      <div class="resource-card">
-        <div class="card-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <div class="card-content">
-          <h3>Yett Pitch Deck</h3>
-          <p>A presentation covering our business model.</p>
-          <a href="https://drive.google.com/file/d/1IgRsF0S4eNtr0HeVq34YhZV-_PCKAnnt/view?usp=sharing" target="_blank" class="card-button">
-            View Deck <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+      <div class="section">
+        <h2>Merchant Onboarding</h2>
+        <p>Over 2,000 stores are now live across five cities — Lucknow, Jaipur, Agra, Indore, and Varanasi.</p>
       </div>
 
-    
-
-      <!-- Investment Proposal Snapshot -->
-      <div class="resource-card">
-        <div class="card-icon">
-          <i class="fas fa-sack-dollar"></i>
-        </div>
-        <div class="card-content">
-          <h3>Investment Proposal Snapshot</h3>
-          <p>A concise one-pager covering raise amount, use of funds, milestones, unit economics, and key timelines.</p>
-          <a href="https://yettinv-n53rjv.manus.space" target="_blank" rel="noopener" class="card-button">
-            View Snapshot <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+      <div class="section">
+        <h2>Mall Partnerships</h2>
+        <p>5 malls in Jaipur, 6 in Lucknow, and 1 in Agra have been onboarded.</p>
       </div>
 
-      <!-- Detailed P&L Statements -->
-      <div class="resource-card">
-        <div class="card-icon">
-          <i class="fas fa-file-invoice-dollar"></i>
-        </div>
-        <div class="card-content">
-          <h3>Detailed P&L Statements</h3>
-          <p>Comprehensive financials including P&L, cash flow, and assumptions—kept current for diligence.</p>
-          <a href="https://docs.google.com/spreadsheets/d/1Xnm5x57KJxGBFwb-AyV5s5Q8DEaSx2sHTh8OSA-cq6U/edit?gid=1984443470#gid=1984443470" target="_blank" rel="noopener" class="card-button">
-            Open Financial Model (Confidential -Available on request) <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+      <div class="section">
+        <h2>Enterprise Integrations</h2>
+        <p>I met the Unicommerce team at their Delhi office, which provided a roadmap to bring large retail brands onto Yett through their integration layer.</p>
       </div>
 
-      <!-- Yett: OS for AI Era -->
-      <div class="resource-card">
-        <div class="card-icon">
-          <i class="fas fa-robot"></i>
-        </div>
-        <div class="card-content">
-          <h3>Yett: OS for AI Era</h3>
-          <p>Our vision is to become the go-to alternative to Google My Business within the categories we serve.</p>
-          <a href="https://drive.google.com/file/d/1GhVwredUQYEVfXO99uPwbXmzVXxwYAW1/view?usp=sharing" target="_blank" class="card-button">
-            View Document <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+      <div class="section">
+        <h2>Exposure and Partnerships</h2>
+        <p>Attending the Global Fintech Fest in Mumbai offered valuable insights and networking opportunities with payment gateways. We are now planning an Offer and Loyalty Program in collaboration with Cootpay, a UPI-based loyalty solution.</p>
       </div>
 
-  <!-- TAM and GTM -->
-      <div class="resource-card">
-        <div class="card-icon">
-          <i class="fas fa-bullseye"></i>
-        </div>
-        <div class="card-content">
-          <h3>TAM and GTM</h3>
-          <p>A strategic view of Total Addressable Market (TAM) and our Go-To-Market (GTM) execution plan.</p>
-          <a href="https://docs.google.com/presentation/d/14u_iT0q1QikdDG42M2GWVKH2BWjY7thmWJcq-qD_xQg/edit?slide=id.p3#slide=id.p3" target="_blank" rel="noopener" class="card-button">
-            View Google Slide (Available on request) <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+      <div class="section">
+        <h2>Investor Interest</h2>
+        <p>Titan Capital has shown interest. We had a detailed 45-minute discussion three weeks ago, and on follow-up last week, they mentioned they are still mulling over the opportunity.</p>
       </div>
 
-      <!-- Short App Intro -->
-      <div class="resource-card">
-        <div class="card-icon">
-          <i class="fas fa-video"></i>
-        </div>
-        <div class="card-content">
-          <h3>Short App Intro</h3>
-          <p>An animated video explainer highlighting a few key features of the Yett app.</p>
-          <a href="https://www.youtube.com/shorts/Z-sjiwYWdAk"_blank" class="card-button">
-            Watch Reel <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+      <div class="section">
+        <h2>Product Milestone</h2>
+        <p>Yett 2.0 is now ready for rollout in the first week of November. An offline chatbot agent developed by Prateek’s team in Bangalore also looks very promising.</p>
       </div>
 
-      <!-- Biz Portal Demo -->
-      <div class="resource-card">
-        <div class="card-icon">
-          <i class="fas fa-laptop-code"></i>
-        </div>
-        <div class="card-content">
-          <h3>Biz Portal Demo</h3>
-          <p>See our business portal in action with this short YouTube demonstration clip.</p>
-          <a href="https://www.youtube.com/watch?v=pwf12wZzWnE" target="_blank" class="card-button">
-            Watch Demo <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+      <div class="section">
+        <h2>Team and Culture</h2>
+        <p>Our 7-member business development and 4-member content and strategy teams are functioning cohesively. I feel far more confident now, having launched the app and seen good feedback from both users and businesses. We have also started generating small revenue from businesses since September.</p>
       </div>
 
-      <!-- Website -->
-      <div class="resource-card">
-        <div class="card-icon">
-          <i class="fas fa-building"></i>
-        </div>
-        <div class="card-content">
-          <h3>Website</h3>
-          <p>Download the app and learn more about Yett and our vision to transform retail discovery.</p>
-          <a href="https://www.yett.in" class="card-button" target="_blank" rel="noopener">
-            Our Website <i class="fas fa-clock"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section footer-about">
-          <div class="footer-logo">Yett</div>
-          <p>India's first dedicated in-store shopping discovery platform for Tier-2 cities. We're building the essential digital discovery layer for the AI-driven retail era.</p>
-          <div class="social-links">
-            <a href="https://instagram.com/yett.in" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/@yett.shopping" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
-            <a href="https://linkedin.com/company/yett-in" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="https://yett.in/about-us/"><i class="fas fa-chevron-right"></i> About Us</a></li>
-            <li><a href="https://yett.in/blogs/"><i class="fas fa-chevron-right"></i> Our Blogs</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Contact Us</h4>
-          <div class="contact-info">
-            <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>Webwabi Private Limited<br>India</span></div>
-            <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>nikhil@yett.in</span></div>
-            <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+91 9839402111</span></div>
-            <div class="contact-item"><i class="fas fa-globe contact-icon"></i><span>www.yett.in</span></div>
-          </div>
-        </div>
+      <div class="section">
+        <h2>Wedding Campaign</h2>
+        <p>We are launching a wedding campaign (Wedding Zing) from November 15 to January 30 across jewellery, footwear, ethnic wear (men and women), accessories, and boutiques categories.</p>
       </div>
 
-      <div class="copyright">
-        <p>&copy; 2025 Webwabi Private Limited. All rights reserved.</p>
-        <p>Transforming retail discovery in Tier-2 India</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Reveal-in-view animation + tilt hover
-    document.addEventListener('DOMContentLoaded', function() {
-      const cards = document.querySelectorAll('.resource-card');
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      cards.forEach(card => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(card);
-
-        // Tilt on hover
-        card.addEventListener('mousemove', function(e) {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const angleY =Here’s your **full HTML file** with the **Investor Resources heading** and cards grouped in order:  
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yett Resources | Webwabi Private Limited</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #5b7cfd;
-      --primary-dark: #1d4ed8;
-      --secondary: #10b981;
-      --dark: #1e293b;
-      --light: #f8fafc;
-      --gray: #64748b;
-      --light-gray: #e2e8f0;
-      --accent: #8b5cf6;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fdf4eb;
-      color: var(--dark);
-      line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-    header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: white; padding: 25px 0; position: relative; overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .header-content { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
-    .logo { display: flex; align-items: center; gap: 15px; }
-    .logo-icon { font-size: 2.5rem; color: var(--secondary); }
-    .logo-text { font-size: 1.8rem; font-weight: 700; }
-    .logo-text span { color: var(--secondary); }
-
-    .hero { padding: 60px 0; text-align: center; }
-    .hero h1 {
-      font-size: 2.8rem; margin-bottom: 20px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      position: relative; display: inline-block;
-    }
-    .hero h1::after {
-      content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
-      width: 80px; height: 4px; background: var(--secondary); border-radius: 2px;
-    }
-    .hero p { font-size: 1.2rem; color: var(--gray); max-width: 700px; margin: 0 auto 40px; }
-
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px; margin: 40px 0;
-    }
-    .resource-card {
-      background: white; border-radius: 16px; overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease; position: relative;
-      will-change: transform, opacity;
-    }
-    .resource-card:hover { transform: translateY(-10px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); }
-    .card-icon {
-      height: 150px; display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      color: white; font-size: 3.5rem;
-    }
-    .card-content { padding: 25px; }
-    .card-content h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--dark); }
-    .card-content p { color: var(--gray); margin-bottom: 20px; font-size: 1rem; }
-    .card-button {
-      display: inline-block; padding: 12px 25px; background: var(--primary); color: white;
-      border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;
-      border: none; cursor: pointer; width: 100%; text-align: center;
-    }
-    .card-button:hover { background: var(--primary-dark); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
-    .card-button i { margin-left: 8px; transition: transform 0.3s ease; }
-    .card-button:hover i { transform: translateX(5px); }
-
-    footer { background-color: #232522; color: white; padding: 60px 0 30px; margin-top: 80px; }
-    .footer-content {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px; margin-bottom: 40px;
-    }
-    .footer-logo { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; color: var(--secondary); }
-    .footer-about p { color: #cbd5e1; margin-bottom: 20px; font-size: 1rem; }
-    .footer-section h4 { font-size: 1.3rem; margin-bottom: 20px; }
-    .footer-links { list-style: none; }
-    .footer-links a { color: #cbd5e1; text-decoration: none; transition: all 0.3s ease; display: block; }
-    .footer-links a:hover { color: white; transform: translateX(5px); }
-    .contact-info { display: flex; flex-direction: column; gap: 15px; }
-    .contact-item { display: flex; align-items: flex-start; gap: 12px; }
-    .contact-icon { color: var(--secondary); font-size: 1.2rem; min-width: 25px; }
-    .social-links { display: flex; gap: 15px; margin-top: 20px; }
-    .social-link {
-      display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1); color: white; font-size: 1.2rem; transition: all 0.3s ease;
-    }
-    .social-link:hover { background: var(--primary); transform: translateY(-3px); }
-    .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #94a3b8; font-size: 0.9rem; }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container header-content">
-      <div class="logo">
-        <div class="logo-icon"><i class="fas fa-store"></i></div>
-        <div class="logo-text">Yett <span>Resources</span></div>
-      </div>
-    </div>
-  </header>
-
-  <div class="container">
-    <section class="hero">
-      <h1>Access Yett Resources</h1>
-      <p>Explore our resources designed to showcase the vision, strategy, and potential of Yett, India's first dedicated in-store shopping discovery platform for Tier-2 cities.</p>
-    </section>
-
-    <div class="resources-grid">
-      <div style="grid-column: 1/-1; text-align: center; margin: 40px 0 10px;">
-        <h2 style="font-size: 2rem; color: var(--primary); border-bottom: 3px solid var(--secondary); display: inline-block; padding-bottom: 8px;">
-          Investor Resources
-        </h2>
+      <div class="section">
+        <h2>Outlook</h2>
+        <p>With the upcoming features in Yett 2.0, I’m optimistic that users will find the platform even more engaging and meaningful.</p>
       </div>
 
-      <div class="resource-card">
-        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="card-content">
-          <h3>Yett Pitch Deck</h3>
-          <p>A presentation covering our business model. The GTM document is ready to be shared on request.</p>
-          <a href="https://drive.google.com/file/d/1IgRsF0S4eNtr0HeVq34YhZV-_PCKAnnt/view?usp=sharing" target="_blank" class="card-button">
-            View Deck <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
+      <div class="section">
+        <p>Success or failure aside, people are resonating with the intent and thought behind Yett.</p>
+        <p>We are building this with commitment and dedication, and we will try not to let you down in effort, intent, or conduct.</p>
       </div>
 
-      
-
-      <div class="resource-card">
-        <div class="card-icon"><i class="fas fa-sack-dollar"></i></div>
-        <div class="card-content">
-          <h3>Investment Proposal Snapshot</h3>
-          <p>A concise one-pager covering raise amount, use of funds, milestones, unit economics, and key timelines.</p>
-          <a href="https://yettinv-n53rjv.manus.space" target="_blank" class="card-button">
-            View Snapshot <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="resource-card">
-        <div class="card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-        <div class="card-content">
-          <h3>Detailed P&L Statements</h3>
-          <p>Comprehensive financials including P&L, cash flow, and assumptions—kept current for diligence.</p>
-          <a href="https://docs.google.com/spreadsheets/d/1Xnm5x57KJxGBFwb-AyV5s5Q8DEaSx2sHTh8OSA-cq6U/edit?gid=1984443470#gid=1984443470" target="_blank" class="card-button">
-           Open Financial Model (Confidential -Available on request) <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="resource-card">
-        <div class="card-icon"><i class="fas fa-robot"></i></div>
-        <div class="card-content">
-          <h3>Yett: OS for AI Era</h3>
-          <p>Our vision is to become the go-to alternative to Google My Business within the categories we serve.</p>
-          <a href="https://drive.google.com/file/d/1GhVwredUQYEVfXO99uPwbXmzVXxwYAW1/view?usp=sharing" target="_blank" class="card-button">
-            View Document <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-<div class="resource-card">
-        <div class="card-icon"><i class="fas fa-bullseye"></i></div>
-        <div class="card-content">
-          <h3>TAM and GTM</h3>
-          <p>A strategic view of Total Addressable Market (TAM) and our Go-To-Market (GTM) execution plan.</p>
-          <a href="https://docs.google.com/presentation/d/14u_iT0q1QikdDG42M2GWVKH2BWjY7thmWJcq-qD_xQg/edit?slide=id.p3#slide=id.p3" target="_blank" class="card-button">
-            View Google Slide (Available on request) <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="resource-card">
-        <div class="card-icon"><i class="fas fa-video"></i></div>
-        <div class="card-content">
-          <h3>Short App Intro</h3>
-          <p>An animated video explainer highlighting a few key features of the Yett app.</p>
-          <a href="https://www.youtube.com/shorts/Z-sjiwYWdAk"_blank" class="card-button">
-            Watch Reel <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="resource-card">
-        <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-        <div class="card-content">
-          <h3>Biz Portal Demo</h3>
-          <p>See our business portal in action with this short YouTube demonstration clip.</p>
-          <a href="https://www.youtube.com/watch?v=pwf12wZzWnE" target="_blank" class="card-button">
-            Watch Demo <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-<div class="resource-card">
-        <div class="card-icon">
-          <i class="fas fa-building"></i>
-        </div>
-        <div class="card-content">
-          <h3>Website</h3>
-          <p>Download the app and learn more about Yett and our vision to transform retail discovery.</p>
-          <a href="https://www.yett.in" target="_blank" class="card-button">
-            Our Website <i class="fas fa-clock"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Business Brochure -->
-      <div class="resource-card">
-        <div class="card-icon">
-          <i class="fas fa-book-open"></i>
-        </div>
-        <div class="card-content">
-          <h3>Business Brochure</h3>
-          <p>A detailed brochure that provides an overview of Yett, its mission, and value proposition.</p>
-          <!-- Replace # with your actual Google Drive brochure link -->
-          <a href="#" target="_blank" class="card-button">
-            View Brochure <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="resource-card">
-        <div class="card-icon"><i class="fas fa-building"></i></div>
-        <div class="card-content">
-          <h3>Website</h3>
-          <p>Download the app and learn more about Yett and our vision to transform retail discovery.</p>
-          <a href="https://www.yett.in" target="_blank" class="card-button">
-            Our Website <i class="fas fa-clock"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-     
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-section footer-about">
-        <div class="footer-logo">Yett</div>
-        <p>India's first dedicated in-store shopping discovery platform for Tier-2 cities. We're building the essential digital discovery layer for the AI-driven retail era.</p>
-        <div class="social-links">
-          <a href="https://instagram.com/yett.in" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/@yett.shopping" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
-          <a href="https://linkedin.com/company/yett-in" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="https://yett.in/about-us/"><i class="fas fa-chevron-right"></i> About Us</a></li>
-          <li><a href="https://yett.in/blogs/"><i class="fas fa-chevron-right"></i> Our Blogs</a></li>
+      <div class="resources">
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="https://yettinv-n53rjv.manus.space/" target="_blank">Revised Investment Strategy</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1Xnm5x57KJxGBFwb-AyV5s5Q8DEaSx2sHTh8OSA-cq6U/edit?gid=359955333#gid=359955333" target="_blank">P&amp;L Sheet</a></li>
+          <li><a href="https://www.youtube.com/shorts/yZVlfKuhamk" target="_blank">Shriya Independence Day</a></li>
+          <li><a href="https://www.youtube.com/shorts/GwM_SoQZXDY" target="_blank">Rap Song</a></li>
+          <li><a href="#" target="_blank">Yett 2.0 Demo (URL coming soon)</a></li>
         </ul>
       </div>
-      <div class="footer-section">
-        <h4>Contact Us</h4>
-        <div class="contact-info">
-          <div class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i><span>Webwabi Private Limited<br>India</span></div>
-          <div class="contact-item"><i class="fas fa-envelope contact-icon"></i><span>info@yett.in</span></div>
-          <div class="contact-item"><i class="fas fa-phone contact-icon"></i><span>+91 9839402111</span></div>
-          <div class="contact-item"><i class="fas fa-globe contact-icon"></i><span>www.yett.in</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>&copy; 2025 Webwabi Private Limited. All rights reserved.</p>
-      <p>Transforming retail discovery in Tier-2 India</p>
-    </div>
-  </footer>
+
+      <p class="footer">© Yett</p>
+    </article>
+  </main>
 </body>
 </html>
+
